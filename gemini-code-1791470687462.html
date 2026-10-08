@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TURFELITE-PMU | Turf Performance Pro</title>
+    <meta name="description" content="Vivre autrement les pronostics avec l'ère numérique.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-left">
+            <button id="theme-toggle" class="icon-btn" aria-label="Changer le thème">
+                <i data-lucide="sun" class="sun-icon"></i>
+                <i data-lucide="moon" class="moon-icon"></i>
+            </button>
+            <a href="#/" class="logo">
+                <span class="logo-text">TURFELITE-PMU <span class="badge-pro">PRO</span></span>
+            </a>
+        </div>
+        <nav class="desktop-nav">
+            <a href="#/">Accueil</a>
+            <a href="#/pronostics">Pronostics</a>
+            <a href="#/resultats">Résultats</a>
+            <a href="#/vip-plans" class="nav-vip">Abonnements VIP</a>
+            <a href="#/faq">FAQ</a>
+        </nav>
+        <div class="header-right" id="auth-header-container">
+            <!-- Injecté par JS : Boutons Connexion/Création ou Menu Profil -->
+        </div>
+    </header>
+
+    <!-- Main Content (SPA Router target) -->
+    <main id="app-content"></main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>TURFELITE-PMU</h3>
+                <p>Vivre autrement les pronostics avec l'ère numérique.</p>
+                <small>Une communauté TURF PERFORMANCE PRO</small>
+            </div>
+            <div class="footer-links">
+                <a href="#/conditions">Conditions</a>
+                <a href="#/confidentialite">Confidentialité</a>
+                <a href="#/contact">Contact</a>
+            </div>
+            <div class="footer-social" id="footer-socials">
+                <!-- Injecté par JS depuis les Settings -->
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Les pronostics sont des analyses et ne garantissent aucun gain. Jouez de manière responsable.</p>
+            <p>&copy; 2026 TurfElite. Tous droits réservés. Nous déclinons toute responsabilité en cas de perte.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Bar -->
+    <nav class="mobile-bottom-bar">
+        <a href="#/" class="nav-item"><i data-lucide="home"></i><span>Accueil</span></a>
+        <a href="#/pronostics" class="nav-item"><i data-lucide="crosshair"></i><span>Pronostics</span></a>
+        <a href="#/vip" class="nav-item nav-vip-mobile"><i data-lucide="crown"></i><span>VIP</span></a>
+        <a href="#/resultats" class="nav-item"><i data-lucide="list-ordered"></i><span>Résultats</span></a>
+        <a href="#/compte" class="nav-item"><i data-lucide="user"></i><span>Compte</span></a>
+    </nav>
+
+    <!-- Floating WhatsApp -->
+    <a href="#" id="wa-float" class="wa-float" target="_blank" aria-label="Assistance WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <!-- Modals -->
+    <div id="auth-modal" class="modal-overlay hidden">
+        <div class="modal-content glass-card">
+            <button class="close-modal"><i data-lucide="x"></i></button>
+            <h2 id="auth-title">Connexion</h2>
+            <form id="auth-form">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="auth-email" required>
+                </div>
+                <div class="form-group">
+                    <label>Mot de passe</label>
+                    <input type="password" id="auth-password" required>
+                </div>
+                <button type="submit" class="btn-primary" id="auth-submit">Se connecter</button>
+            </form>
+            <p class="auth-switch">Pas encore de compte ? <a href="#" id="switch-auth-mode">Créer un compte</a></p>
+        </div>
+    </div>
+
+    <!-- Scripts CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
